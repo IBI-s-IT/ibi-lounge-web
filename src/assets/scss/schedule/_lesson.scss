@@ -1,0 +1,72 @@
+.lesson {
+  display: flex;
+  justify-content: space-between;
+  row-gap: 8px;
+  padding: 16px;
+  border-radius: 16px;
+  background-color:var(--clr-additional-5);
+  margin-bottom: 8px;
+  color: var(--clr-secondary-dark);
+  text-decoration: none;
+  overflow: hidden;
+
+  &:is(a):hover {
+    background-color: var(--clr-primary-lighter);
+
+    .icon {
+      transform: translateX(0);
+      opacity: 1;
+
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+  }
+  &__right {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+    justify-content: center;
+    align-items: flex-end;
+    padding-right: 64px;
+
+    position: relative;
+
+    .icon {
+      position: absolute;
+      right: 0;
+      padding: 8px;
+      transform: translateX(100%);
+      opacity: 0;
+      transition: opacity .1s, transform .2s;
+    }
+  }
+
+  &__time {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  &__name {
+    font-size: 26px;
+    font-weight: 600;
+  }
+
+  &__teacher {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  &__type {
+    font-size: 16px;
+  }
+
+  &__room {
+    font-size: 16px;
+  }
+
+}

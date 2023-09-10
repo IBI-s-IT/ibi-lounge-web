@@ -1,0 +1,130 @@
+:root {
+
+  --header-height: 64px;
+  --nav-width: 275px;
+  --nav-height-mobile: 100px;
+  --grid-template-areas: "nav name" "nav cont";
+  --nav-grid-area: nav;
+  --header-grid-area: name;
+  --content-grid-area: cont;
+  --grid-template-rows: var(--header-height) 1fr;
+  --grid-template-columns: var(--nav-width) 1fr;
+
+  --grid-template-areas-mobile: "name" "cont" "nav";
+  --grid-template-columns-mobile: 1fr;
+  --grid-template-rows-mobile: var(--header-height) 1fr var(--nav-height-mobile);
+
+  --header-font-size: 20px;
+  --header-font-weight: 600;
+  --header-border-width: 1px;
+  --nav-font-size: 20px;
+  --nav-border-width: 2px;
+  --container-height: calc(100vh - var(--header-height));
+
+
+  /* colorscheme */
+  //--clr-primary: #f3f3f1;
+  //--clr-primary-dark: #e4e4e2;
+  //--clr-primary-darker: #e0e0e0;
+  //--clr-primary-light: #f2f2f2;
+  //--clr-primary-lighter: #f5f5f5;
+  //--clr-secondary: #3e3e3e;
+  //--clr-secondary-dark: #2b2b2b;
+  //--clr-secondary-medium: #e9e9e9;
+  //--clr-secondary-light: #d6d6d6;
+  //--clr-secondary-lighter: #484848;
+  //
+  //--clr-additional-1: #0168d3;
+  //--clr-additional-1-op-medium: #0168d3cc;
+  //--clr-additional-1-op-light: #0168d344;
+  //--clr-additional-2: #f2f1f6;
+  //--clr-additional-3: #c9c8c6;
+  //--clr-additional-3-op-medium: #c9c8c6cc;
+  //--clr-additional-3-op-light: #c9c8c644;
+  //--clr-additional-4: #1018281a;
+  //--clr-additional-5: #ffffff;
+
+
+}
+
+body.light-theme {
+  /* colorscheme */
+  --clr-primary: #f3f3f1;
+  --clr-primary-dark: #e4e4e2;
+  --clr-primary-darker: #e0e0e0;
+  --clr-primary-light: #f2f2f2;
+  --clr-primary-lighter: #f5f5f5;
+  --clr-secondary: #3e3e3e;
+  --clr-secondary-dark: #2b2b2b;
+  --clr-secondary-medium: #e9e9e9;
+  --clr-secondary-light: #d6d6d6;
+  --clr-secondary-lighter: #484848;
+
+  --clr-additional-1: #0168d3;
+  --clr-additional-1-op-medium: #0168d3cc;
+  --clr-additional-1-op-light: #0168d344;
+  --clr-additional-2: #f2f1f6;
+  --clr-additional-3: #c9c8c6;
+  --clr-additional-3-op-medium: #c9c8c6cc;
+  --clr-additional-3-op-light: #c9c8c644;
+  --clr-additional-4: #29292a;
+  --clr-additional-5: #ffffff;
+}
+
+body.dark-theme {
+    // the dark theme colorscheme
+    // #171717 #222 #292929 #3a3a3a #101010
+    // --black: #030303ff;
+  //--night: #0d0d0dff;
+  //--night-2: #121212ff;
+  //--jet: #292929ff;
+  //--jet-2: #2e2e2eff;
+  //--eerie-black: #1c1c1cff;
+  //--eerie-black-2: #171717ff;
+  //--night-3: #161616ff;
+    --clr-primary: #171717;
+    --clr-primary-dark: #121212;
+    --clr-primary-darker: #161616;
+    --clr-primary-light: #101010;
+    --clr-primary-lighter: #2e2e2e;
+    --clr-secondary: #e9e9e9;
+    --clr-secondary-dark: #e9e9e9;
+    --clr-secondary-medium: #0d0d0d;
+    --clr-secondary-light: #2e2e2e;
+    --clr-secondary-lighter: #e9e9e9;
+
+    --clr-additional-1: #0168d3;
+    --clr-additional-1-op-medium: #0168d3aa;
+    --clr-additional-1-op-light: #0168d355;
+    --clr-additional-2: #8d8d8d;
+    --clr-additional-3: #2d2d2d;
+    --clr-additional-3-op-medium: #2d2d2d99;
+    --clr-additional-3-op-light: #2d2d2d66;
+    --clr-additional-4: #ffffff;
+    --clr-additional-5: #29292a;
+
+
+}
+
+
+.dp__theme_light {
+  --dp-background-color: var(--clr-additional-5) !important;
+  --dp-text-color: var(--clr-secondary) !important;
+  --dp-hover-color: var(--clr-additional-3) !important;
+  --dp-hover-text-color: var(--clr-secondary-lighter) !important;
+  --dp-hover-icon-color: var(--clr-secondary-lighter) !important;
+  --dp-primary-color: var(--clr-additional-1) !important;
+  --dp-primary-text-color: var(--clr-additional-4) !important;
+  --dp-secondary-color: var(--clr-additional-2) !important;
+  --dp-border-color: none !important;
+  --dp-menu-border-color: var(--clr-secondary-light) !important;
+  --dp-border-color-hover: var(--clr-secondary-lighter) !important;
+  --dp-disabled-color: var(--clr-secondary-light) !important;
+  --dp-scroll-bar-background: #f3f3f3;
+  --dp-scroll-bar-color: #959595;
+  --dp-success-color: #76d275;
+  --dp-success-color-disabled: #a3d9b1;
+  --dp-icon-color: #959595;
+  --dp-danger-color: #ff6f60;
+  --dp-highlight-color: rgba(25, 118, 210, 0.1);
+}

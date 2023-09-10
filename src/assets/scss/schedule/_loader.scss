@@ -1,0 +1,18 @@
+.container {
+  height: var(--container-height);
+  overflow-y: auto;
+}
+.error {
+  display: flex;
+  justify-content: center;
+  //align-items: center;
+  height: 100%;
+  width: 100%;
+  font-size: 24px;
+  padding: calc((10vh + 10vw) / 2);
+  color: var(--clr-secondary-dark);
+
+  //span {
+  //  transform: translateY(-300%);
+  //}
+}

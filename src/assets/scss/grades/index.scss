@@ -1,0 +1,57 @@
+.grades {
+  display: grid;
+  //grid-auto-flow: column;
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  padding: 8px;
+  overflow: auto;
+  gap: 8px;
+  height: var(--container-height);
+
+  .grades__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 16px;
+    border-radius: 16px;
+    background-color: var(--clr-primary-dark);
+    color: var(--clr-secondary-lighter);
+    cursor: default;
+    transition-duration: .2s;
+
+    &:hover {
+      background-color: var(--clr-primary-darker);
+    }
+
+    .grades__item__title {
+      font-size: 20px;
+      width: 50%;
+      font-weight: 500;
+    }
+    .grades__item__type {
+      font-size: 20px;
+      text-align: center;
+      font-weight: 500;
+    }
+    .grades__item__grade {
+      font-size: 20px;
+      width: 25%;
+      text-align: right;
+      font-weight: 500;
+    }
+  }
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 64px;
+  .error_text {
+    font-size: 1.5rem;
+    color: var(--clr-secondary-dark);
+  }
+}

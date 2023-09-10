@@ -1,0 +1,115 @@
+@use "props";
+@use "fonts";
+@use "reset";
+
+
+* { scrollbar-width: none; } /* for firefox */
+::-webkit-scrollbar { width: 0; } /* for chrome */
+
+
+
+body {
+  overflow: hidden;
+
+  background-color: var(--clr-primary);
+}
+
+#app {
+  display: grid;
+  grid-template-areas: var(--grid-template-areas);
+  font-family: "SFProText", sans-serif;
+  grid-template-columns: var(--grid-template-columns);
+  grid-template-rows: var(--grid-template-rows);
+
+  .day_* {
+    transition-duration: 1s;
+  }
+}
+
+
+
+.sidenav {
+  cursor: default;
+  font-size: var(--nav-font-size);
+  grid-area: var(--nav-grid-area);
+  color: var(--clr-secondary-lighter);
+  border-right: var(--nav-border-width) solid var(--clr-primary-dark);
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--nav-title-height);
+    background-color: var(--clr-primary-darker);
+    padding: 0 24px;
+
+    >:last-child {
+      cursor: pointer;
+    }
+
+  }
+
+  &__links {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+    height: calc(100vh - var(--header-height));
+    background-color: var(--clr-primary-darker);
+
+    a {
+      text-decoration: none;
+      color: var(--clr-secondary);
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition-duration: .3s;
+      &.router-link-active {
+        background-color: var(--clr-additional-3);
+      }
+      &.router-link-active:hover {
+        background-color: var(--clr-additional-3-op-medium);
+      }
+      &:hover {
+        background-color: var(--clr-additional-3-op-light)
+      }
+    }
+  }
+}
+
+.name-bar {
+  cursor: default;
+  grid-area: var(--header-grid-area);
+  padding: 24px;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: var(--clr-primary);
+  border-bottom: var(--header-border-width) solid var(--clr-primary-dark);
+
+  .name {
+    margin-left: 16px;
+    font-size: var(--header-font-size);
+    font-weight: var(--header-font-weight);
+    color: var(--clr-secondary-lighter);
+  }
+  .theme-switcher {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--clr-primary-dark);
+    cursor: pointer;
+    transition-duration: .3s;;
+    &:hover {
+      background-color: var(--clr-primary-darker);
+    }
+  }
+}
+
+.content {
+  grid-area: var(--content-grid-area);
+}

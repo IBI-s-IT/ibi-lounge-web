@@ -1,0 +1,26 @@
+.day {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-additional-5);
+  margin-bottom: 16px;
+
+  &__header {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    background-color: var(--clr-additional-5);
+    font-size: 16px;
+    font-weight: 600;
+    color: #838383;
+    padding: 8px 32px;
+    border-bottom: 1px solid var(--clr-secondary-medium);
+  }
+  //&__header:
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+  }
+}
