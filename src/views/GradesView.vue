@@ -37,7 +37,9 @@ try {
       <div class="grades__item" v-for="grade in gradesList" :key="grade">
         <span class="grades__item__title">{{grade['name']}}</span>
         <span class="grades__item__type">{{label(['grades', grade['type']])}}</span>
-        <span class="grades__item__grade">{{label(['grades', grade['grade']])}}</span>
+        <span class="grades__item__grade" :class="'grade_'+grade['grade']">
+          {{label(['grades', grade['grade']])}}
+        </span>
       </div>
     </div>
     <div class="error" v-else>
