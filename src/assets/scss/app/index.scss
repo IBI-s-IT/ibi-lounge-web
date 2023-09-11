@@ -59,6 +59,10 @@ body {
     background-color: var(--clr-primary-darker);
 
     a {
+      display: inline-flex;
+      gap: 4px;
+      align-items: center;
+
       text-decoration: none;
       color: var(--clr-secondary);
       padding: 8px 16px;

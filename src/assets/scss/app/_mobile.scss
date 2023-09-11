@@ -15,6 +15,7 @@
       flex-direction: row;
       justify-content: space-evenly;
       a  {
+        display: block;
         background: none !important;
         svg path {
           fill: var(--clr-secondary-lighter);
