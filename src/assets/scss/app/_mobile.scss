@@ -1,0 +1,28 @@
+@media screen and (max-width: 768px){
+  .sidenav {
+    position: fixed;
+    z-index: 98;
+    height: var(--nav-height-mobile);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-right: none;
+    border-top: var(--nav-border-width) solid var(--clr-primary-darker);
+
+    &__links.mobile {
+      padding: 4px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      a  {
+        background: none !important;
+        svg path {
+          fill: var(--clr-secondary-lighter);
+        }
+        &.router-link-active svg path {
+          fill: var(--clr-additional-1);
+        }
+      }
+    }
+  }
+}

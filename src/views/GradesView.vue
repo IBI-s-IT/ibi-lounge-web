@@ -56,6 +56,7 @@ try {
 <style scoped lang="scss">
 
 @use "@/assets/scss/grades";
+@use "@/assets/scss/grades/mobile";
 
 
 </style>

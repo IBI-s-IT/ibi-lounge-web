@@ -1,6 +1,7 @@
 @use "props";
 @use "fonts";
 @use "reset";
+@use "mobile";
 
 
 * { scrollbar-width: none; } /* for firefox */
@@ -112,4 +113,5 @@ body {
 
 .content {
   grid-area: var(--content-grid-area);
+  height: var(--container-height);
 }

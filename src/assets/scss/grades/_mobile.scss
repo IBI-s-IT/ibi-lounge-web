@@ -1,0 +1,31 @@
+@media screen and (max-width: 768px) {
+  .grades {
+    display: flex;
+    flex-direction: column;
+    &__item {
+      background: none !important;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: "name name" "type grade";
+      flex-direction: column;
+      border-bottom: 1px solid var(--clr-secondary-lighter);
+      border-top: 1px solid var(--clr-secondary-lighter);
+
+      &__title {
+        grid-area: name;
+        width: auto;
+        border-bottom: 1px dotted var(--clr-secondary-lighter);
+      }
+      &__type {
+        grid-area: type;
+        width: auto;
+      }
+      &__grade {
+        grid-area: grade;
+        width: auto;
+      }
+
+    }
+  }
+}

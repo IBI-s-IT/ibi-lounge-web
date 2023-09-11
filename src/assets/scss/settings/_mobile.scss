@@ -1,0 +1,20 @@
+@media screen and (max-width: 768px) {
+  .settings {
+    padding: 8px;
+    height: var(--container-height);
+
+    &__item {
+      input {
+        font-size: 14px;
+      }
+    }
+
+    &__wrapper__title {
+      font-size: 16px;
+    }
+
+    &__select {
+      width: 40%;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import GradesView from "@/views/GradesView.vue";
 import MaterialsView from "@/views/MaterialsView.vue";
+import SettingsView from "@/views/SettingsView.vue";
 
 
 const router = createRouter({
@@ -52,6 +53,11 @@ const router = createRouter({
       path: '/materials',
       name: 'materials',
       component: MaterialsView
+    },
+    {
+      path: '/settings',
+      name: 'settings',
+      component: SettingsView
     }
   ]
 })

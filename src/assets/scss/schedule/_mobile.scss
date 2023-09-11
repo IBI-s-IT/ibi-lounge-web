@@ -1,0 +1,88 @@
+@media screen and (max-width: 768px){
+  .frame {
+    //display: none;
+    position: relative;
+    display: block;
+    width: 100vw;
+    height: var(--container-height);
+    overflow-x: hidden;
+    background-color: var(--clr-additional-5);
+    //z-index: -1;
+
+    .sidebar.mobile {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: 100vw;
+      height: var(--container-height);
+      z-index: 3;
+      transform: translateX(-100%);
+      transition-duration: .3s;
+
+      &.opened {
+        transform: translateX(0);
+      }
+    }
+    .menu {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 0;
+      width: 32px;
+      height: 32px;
+      background-color: var(--clr-additional-4);
+      mask-image: url("/assets/svg/menu.svg");
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask-size: cover;
+      background-size: cover;
+      z-index: 2;
+      fill: var(--clr-secondary-lighter);
+    }
+    .schedule {
+      position: absolute;
+      top: 0;
+      bottom: 64px;
+      left: 0;
+        right: 0;
+    }
+  }
+
+  .lesson {
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+
+    &:is(a):hover {
+
+      .icon {
+        transform: translateX(16px);
+        opacity: 1;
+
+      }
+    }
+
+    &__right {
+      padding-right: 18px;
+      .icon {
+        padding: 0;
+        transform: translateX(16px);
+        opacity: 1;
+      }
+    }
+
+    &__time {
+      font-size: 16px;
+    }
+
+    &__name {
+      font-size: 22px;
+    }
+
+    &__teacher, &__type, &__room {
+      font-size: 12px;
+    }
+
+  }
+}

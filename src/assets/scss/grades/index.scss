@@ -1,13 +1,13 @@
 .grades {
   display: grid;
   //grid-auto-flow: column;
-  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   padding: 8px;
   overflow: auto;
   gap: 8px;
   height: var(--container-height);
 
-  .grades__item {
+  &__item {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -24,17 +24,17 @@
       background-color: var(--clr-primary-darker);
     }
 
-    .grades__item__title {
+    &__title {
       font-size: 20px;
       width: 50%;
       font-weight: 500;
     }
-    .grades__item__type {
+    &__type {
       font-size: 20px;
       text-align: center;
       font-weight: 500;
     }
-    .grades__item__grade {
+    &__grade {
       font-size: 20px;
       width: 25%;
       text-align: right;

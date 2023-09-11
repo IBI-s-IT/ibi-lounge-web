@@ -1,8 +1,10 @@
 :root {
 
   --header-height: 64px;
+  --header-height-mobile: 64px;
   --nav-width: 275px;
-  --nav-height-mobile: 100px;
+  --nav-width-mobile: 100%;
+  --nav-height-mobile: 64px;
   --grid-template-areas: "nav name" "nav cont";
   --nav-grid-area: nav;
   --header-grid-area: name;
@@ -20,6 +22,7 @@
   --nav-font-size: 20px;
   --nav-border-width: 2px;
   --container-height: calc(100vh - var(--header-height));
+  --container-height-mobile: calc(100vh - var(--header-height) - var(--nav-height-mobile));
 
   --clr-grade-5: #00a500;
   --clr-grade-4: #2a9bff;
@@ -50,6 +53,23 @@
   //--clr-additional-5: #ffffff;
 
 
+}
+
+@media screen and (max-width: 768px) {
+    :root {
+        --header-height: var(--header-height-mobile);
+        --nav-width: var(--nav-width-mobile);
+        --grid-template-areas: var(--grid-template-areas-mobile);
+        --grid-template-rows: var(--grid-template-rows-mobile);
+        --grid-template-columns: var(--grid-template-columns-mobile);
+
+        --header-font-size: 20px;
+        //--header-font-weight: 600;
+        //--header-border-width: 1px;
+        //--nav-font-size: 20px;
+        //--nav-border-width: 2px;
+        --container-height: var(--container-height-mobile);
+    }
 }
 
 body.light-theme {

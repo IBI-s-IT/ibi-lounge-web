@@ -8,11 +8,14 @@ const props = defineProps({
   },
   to: {
     type: String,
-    required: true
+    default: '/home'
   },
   color: {
     type: String,
     default: 'black'
+  },
+  fill: {
+    type: [String, undefined]
   },
   size: {
     type: String,
@@ -21,31 +24,33 @@ const props = defineProps({
   external: {
     type: Boolean,
     default: false
-  }
+  },
+  button: {
+    type: Boolean,
+    default: false
+  },
 })
 
-const to_name = props.to.split('/')[1]
+const to_name = !props.external && !props.button ? props.to.split('/')[1] : undefined
 
-// const toParam = () => {
-//   switch (to_name) {
-//     case 'schedule':
-//       return {name: to_name, params:{type: 'this-week'}}
-//     case 'grades':
-//       return {name: to_name}
-//     case 'materials':
-//       return {name: to_name}
-//     default:
-//       return {name: to_name}
-//   }
-// }
 
 </script>
 
 <template>
-  <a :href="to" target="_blank" v-if="external">
-    <UniversalIcon :name="props.name" :color="props.color" :size="props.size"/> <slot />
+  <a href="#!" v-if="button">
+    <UniversalIcon :name="props.name" :fill="props.fill" :size="props.size" v-if="props.fill"/>
+    <UniversalIcon :name="props.name" :color="props.color" :size="props.size" v-else/>
+    <slot />
   </a>
-  <RouterLink :to="{name: to_name}" :class="props.aClass" v-else>
-    <UniversalIcon :name="props.name" :color="props.color" :size="props.size"/> <slot />
+  <a :href="to" target="_blank" v-else-if="external">
+    <UniversalIcon :name="props.name" :fill="props.fill" :size="props.size" v-if="props.fill"/>
+    <UniversalIcon :name="props.name" :color="props.color" :size="props.size" v-else/>
+
+    <slot />
+  </a>
+  <RouterLink :to="{name: to_name}" v-else>
+    <UniversalIcon :name="props.name" :fill="props.fill" :size="props.size" v-if="props.fill"/>
+    <UniversalIcon :name="props.name" :color="props.color" :size="props.size" v-else/>
+    <slot />
   </RouterLink>
 </template>

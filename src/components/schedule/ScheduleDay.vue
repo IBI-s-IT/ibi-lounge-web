@@ -72,5 +72,6 @@ const formTime = (start, end) => {
 <style scoped lang="scss">
 
 @use "@/assets/scss/schedule/lesson";
+@use "@/assets/scss/schedule/mobile";
 
 </style>

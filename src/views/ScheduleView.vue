@@ -7,12 +7,14 @@ import '@vuepic/vue-datepicker/dist/main.css'
 import {usePeriodStore} from "@/stores/periodswitcher";
 import {useRoute, useRouter} from "vue-router";
 import {useLabels} from "@/stores/labels";
+import {computed} from "vue";
 
 const label = useLabels().label
 const periodStore = usePeriodStore()
 const route = useRoute()
 const router = useRouter()
 
+const isMobile = computed(() => window.innerWidth < 768)
 
 const loadSchedule = (value) => {
   if (value !== null) {
@@ -22,6 +24,14 @@ const loadSchedule = (value) => {
   } else {
     router.push('/schedule/this-week')
   }
+  closeSidebar()
+}
+
+const openSidebar = () => {
+  document.querySelector('#schedule-sidebar').classList.add('opened')
+}
+const closeSidebar = () => {
+  document.querySelector('#schedule-sidebar').classList.remove('opened')
 }
 
 
@@ -29,11 +39,12 @@ const loadSchedule = (value) => {
 
 <template>
   <div class="frame">
-    <div class="sidebar">
-      <RouterLink to="/schedule/this-week">{{ label(['schedule', 'this-week']) }}</RouterLink>
-      <RouterLink to="/schedule/next-week">{{ label(['schedule', 'next-week']) }}</RouterLink>
-      <RouterLink to="/schedule/this-month">{{ label(['schedule', 'this-month']) }}</RouterLink>
-      <RouterLink to="/schedule/next-month">{{ label(['schedule', 'next-month']) }}</RouterLink>
+    <div class="menu" v-if="isMobile" @click="openSidebar"></div>
+    <div id="schedule-sidebar" class="sidebar" :class="{'mobile opened': isMobile}">
+      <RouterLink to="/schedule/this-week" @click="closeSidebar">{{ label(['schedule', 'this-week']) }}</RouterLink>
+      <RouterLink to="/schedule/next-week" @click="closeSidebar">{{ label(['schedule', 'next-week']) }}</RouterLink>
+      <RouterLink to="/schedule/this-month" @click="closeSidebar">{{ label(['schedule', 'this-month']) }}</RouterLink>
+      <RouterLink to="/schedule/next-month" @click="closeSidebar">{{ label(['schedule', 'next-month']) }}</RouterLink>
       <span
           class="disabled"
           :class="{'router-link-active': periodStore.dates !== null}"
@@ -66,5 +77,6 @@ const loadSchedule = (value) => {
 <style scoped lang="scss">
 
 @use "@/assets/scss/schedule/frame";
+@use "@/assets/scss/schedule/mobile";
 
 </style>
