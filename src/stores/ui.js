@@ -34,14 +34,14 @@ export const useUIStore = defineStore('uiStore', {
 
             if (theme.value === 'dark-theme') {
                 document.getElementsByName('theme-color').item(0)
-                    .setAttribute('content', '#000000')
+                    .setAttribute('content', '#171717')
                 document.getElementsByName('msapplication-TileColor').item(0)
-                    .setAttribute('content', '#000000')
+                    .setAttribute('content', '#171717')
             } else {
                 document.getElementsByName('theme-color').item(0)
-                    .setAttribute('content', '#ffffff')
+                    .setAttribute('content', '#f3f3f1')
                 document.getElementsByName('msapplication-TileColor').item(0)
-                    .setAttribute('content', '#ffffff')
+                    .setAttribute('content', '#f3f3f1')
             }
         }
 
