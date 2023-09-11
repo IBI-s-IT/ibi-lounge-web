@@ -1,3 +1,9 @@
+@media screen and (max-width: 1200px) {
+  .grades {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .grades {
     display: flex;

@@ -1,5 +1,5 @@
 {
-  "name": "rasp",
+  "name": "web-ibi-lounge",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -23,6 +23,7 @@
     "eslint": "^8.46.0",
     "eslint-plugin-vue": "^9.16.1",
     "sass": "^1.66.1",
-    "vite": "^4.4.9"
+    "vite": "^4.4.9",
+    "vite-plugin-pwa": "^0.16.5"
   }
 }

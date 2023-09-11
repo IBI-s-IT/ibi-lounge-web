@@ -48,7 +48,7 @@ const label = useLabels().label
 <template>
   <div class="sidenav">
     <div class="sidenav__title" v-if="!isMobile">
-      <img alt="IBI Lounge logo" class="logo" src="/icons/Icon64.png"/>
+      <img alt="IBI Lounge logo" class="logo" src="/assets/img/Icon64.png"/>
       <span>{{ label(['app', 'name']) }}</span>
       <UniversalIcon name="gear" size="24px" fill="--clr-secondary-lighter"
                      @click="modalStore.open('settings')" />

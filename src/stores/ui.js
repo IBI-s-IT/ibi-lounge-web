@@ -31,6 +31,18 @@ export const useUIStore = defineStore('uiStore', {
                 theme.value = newTheme
             }
             document.body.classList.add(theme.value)
+
+            if (theme.value === 'dark-theme') {
+                document.getElementsByName('theme-color').item(0)
+                    .setAttribute('content', '#000000')
+                document.getElementsByName('msapplication-TileColor').item(0)
+                    .setAttribute('content', '#000000')
+            } else {
+                document.getElementsByName('theme-color').item(0)
+                    .setAttribute('content', '#ffffff')
+                document.getElementsByName('msapplication-TileColor').item(0)
+                    .setAttribute('content', '#ffffff')
+            }
         }
 
         return { language, theme, languages, themes, setLanguage, setTheme }

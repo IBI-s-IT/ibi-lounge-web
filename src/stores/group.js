@@ -6,12 +6,12 @@ export const useGroupStore = defineStore('groupStore', {
 
         const group = ref('1482')
         const educationLevel = ref('1')
-        const subgroups = ref([{"subject":"Ин.язык","group":"2А","subgroup":"2"}]) // [{"subject":"Ин.язык","group":"2А","subgroup":"2"}]
+        const subgroups = ref([{"subject":"Ин.язык","group":"А","subgroup":"1"}]) // [{"subject":"Ин.язык","group":"2А","subgroup":"2"}]
 
         const subGroupsList = [
             {
                 subject: 'Ин.язык',
-                groups: ['2А', '2В', '2С'],
+                groups: ['А', 'В', 'С'],
                 subgroups: ['1', '2']
             }
         ]
