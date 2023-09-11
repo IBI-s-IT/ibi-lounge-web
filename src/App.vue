@@ -62,8 +62,8 @@ const label = useLabels().label
                       @click="tabStore.select(1)">
         {{ label(['sidenav', 'grades']) }}
       </NavigationIcon>
-      <NavigationIcon to="https://lms.ibispb.ru" name="newspaper" size="20px" color="#0168d3"
-                      :external="true">
+      <NavigationIcon to="/materials" name="newspaper" size="20px" color="#0168d3"
+                      @click="tabStore.select(2)">
         {{ label(['sidenav', 'materials']) }}
       </NavigationIcon>
       <tool-tip class="cred">
@@ -78,10 +78,10 @@ const label = useLabels().label
     <nav class="sidenav__links mobile" v-else>
       <NavigationIcon to="/schedule" name="calendar" size="32px"
                       @click="tabStore.select(0)" />
+      <NavigationIcon to="/materials" name="newspaper" size="32px"
+                      @click="tabStore.select(2)" />
       <NavigationIcon to="/grades" name="graduation-cap" size="32px"
                       @click="tabStore.select(1)" />
-      <NavigationIcon to="https://lms.ibispb.ru" name="newspaper" size="32px"
-                      :external="true" />
 
       <NavigationIcon to="/settings" name="gear" size="32px"
                      @click="tabStore.select(3)"/>
@@ -119,11 +119,5 @@ const label = useLabels().label
 <style lang="scss">
 
 @use "@/assets/scss/app";
-
-.cred {
-  align-self: center;
-  margin-top: auto !important;
-  font-size: 14px;
-}
 
 </style>

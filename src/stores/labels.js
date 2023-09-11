@@ -113,6 +113,16 @@ export const useLabels =
                     'subgroup_filter_all': 'Все подгруппы',
                     'subgroup_filter_add': 'Добавить',
                     'close': 'Закрыть',
+                },
+                materials: {
+                    'header': 'Тут вы можете найти ссылки на самые востребованные материалы',
+                    'link-lms': 'Среда дистанционного обучения МБИ (ЕЭОС)',
+                    'link-mail': 'Студенческая почта',
+                    'link-e-lib': 'Электронная библиотека',
+                    'link-magazine': 'Журнал Банк\'а',
+                    'link-stud-life': 'Студенческая жизнь',
+                    'link-contacts': 'Контакты',
+                    'link-pay': 'Оплата обучения',
                 }
 
             },
@@ -225,6 +235,16 @@ export const useLabels =
                     'subgroup_filter_all': 'All subgroups',
                     'subgroup_filter_add': 'Add',
                     'close': 'Close',
+                },
+                materials: {
+                    'header': 'Here you can find links to the most popular materials',
+                    'link-lms': 'Learning Management System of IBI',
+                    'link-mail': 'Student mail',
+                    'link-e-lib': 'Electronic library',
+                    'link-magazine': '"Банк\'а" magazine',
+                    'link-stud-life': 'Student life',
+                    'link-contacts': 'Contacts',
+                    'link-pay': 'Payment',
                 }
 
             },
@@ -338,6 +358,16 @@ export const useLabels =
                     'subgroup_filter_all': 'Все подгруппы',
                     'subgroup_filter_add': 'Добавить',
                     'close': 'Закрыть',
+                },
+                materials: {
+                    'header': 'Тут вы можете найти ссылки на самые востребованные материалы',
+                    'link-lms': 'Среда дистанционного обучения МБИ (ЕЭОС)',
+                    'link-mail': 'Студенческая почта',
+                    'link-e-lib': 'Электронная библиотека',
+                    'link-magazine': 'Журнал Банк\'а',
+                    'link-stud-life': 'Студенческая жизнь',
+                    'link-contacts': 'Контакты',
+                    'link-pay': 'Оплата обучения',
                 }
 
             },

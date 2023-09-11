@@ -21,8 +21,8 @@
   --header-border-width: 1px;
   --nav-font-size: 20px;
   --nav-border-width: 2px;
-  --container-height: calc(100vh - var(--header-height));
-  --container-height-mobile: calc(100vh - var(--header-height) - var(--nav-height-mobile));
+  --container-height: calc(100dvh - var(--header-height));
+  --container-height-mobile: calc(100dvh - var(--header-height) - var(--nav-height-mobile));
 
   --clr-grade-5: #00a500;
   --clr-grade-4: #2a9bff;
