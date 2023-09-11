@@ -22,6 +22,7 @@ const label = useLabels().label
   align-items: center;
   justify-content: center;
   height: 100%;
+  color: var(--clr-secondary-lighter);
   &__title {
     font-size: 2rem;
     font-weight: 700;
