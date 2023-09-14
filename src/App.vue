@@ -39,6 +39,8 @@ const modalStore = useModalsStore()
 
 const uiStore = useUIStore()
 document.body.classList.add(uiStore.theme)
+document.getElementsByName('theme-color')[0]
+    .setAttribute('content', uiStore.theme === 'dark-theme' ? '#171717' : '#f3f3f1')
 
 const label = useLabels().label
 
