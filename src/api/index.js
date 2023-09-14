@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "https://api.cullfy.ru/ibi";
+const baseURL = "http://rasp-back.utme.space";
 const instance = axios.create({
     baseURL: baseURL
 });
@@ -20,7 +20,11 @@ export const getGroups = async (education_level) => {
 
 export const getSchedule = async (group_id, start_date, end_date, subject_props) => {
     subject_props = encodeURI(JSON.stringify(subject_props))
-    const url = `/filterSchedule?group=${group_id}&dateStart=${start_date}&dateEnd=${end_date}&subjectsProps=${subject_props}`
+    const url = `/schedules` +
+    `?group=${group_id}` +
+    `&dateStart=${start_date}` +
+    `&dateEnd=${end_date}` +
+    `&subgroups=${subject_props}`
     // console.log(url)
     const response = await instance.get(url)
     return response.data
