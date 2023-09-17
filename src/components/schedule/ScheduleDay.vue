@@ -3,6 +3,7 @@
 import UniversalIcon from "@/components/ui/UniversalIcon.vue";
 import {useGroupStore} from "@/stores/group";
 import {useLabels} from "@/stores/labels";
+import EmojiLabel from "@/components/ui/EmojiLabel.vue";
 
 defineProps({
   lessons: {
@@ -37,9 +38,9 @@ const formTime = (start, end) => {
             <span class="lesson__teacher">{{ lesson['additional']['teacher_name'] }}</span>
           </span>
           <span class="lesson__right">
-            <span class="lesson__type">{{ label(['schedule', lesson['additional']['type']]) }}</span>
-            <span class="lesson__room" v-if="lesson['additional']['url']">{{ label(['schedule', 'online']) }}</span>
-            <span class="lesson__room" v-else>{{ lesson['additional']['location'] }}</span>
+            <emoji-label :name="lesson['additional']['type']" class="lesson__type" />
+            <emoji-label name="online"  class="lesson__room" v-if="lesson['additional']['url']" />
+            <emoji-label :name="lesson['additional']['location']" class="lesson__room" v-else />
             <UniversalIcon
                 name="angle-right"
                 size="32px"

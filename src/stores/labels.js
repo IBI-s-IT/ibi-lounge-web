@@ -47,7 +47,7 @@ export const useLabels =
                     'practice': 'Практика',
                     'consultation': 'Консультация',
                     'subject_report_with_grade': 'Диф. зачёт',
-                    'subject_report_without_grade': 'Зачёт',
+                    'subject_report': 'Зачёт',
                     'exam': 'Экзамен',
                     'library_day': 'Библиотечный день',
                     'project_work': 'Проектная деятельность'
@@ -169,7 +169,7 @@ export const useLabels =
                     'practice': 'Practice',
                     'consultation': 'Consultation',
                     'subject_report_with_grade': 'Diff. credit',
-                    'subject_report_without_grade': 'Credit',
+                    'subject_report': 'Credit',
                     'exam': 'Exam',
                     'library_day': 'Library day',
                     'project_work': 'Project work'
@@ -293,7 +293,7 @@ export const useLabels =
                     'practice': 'Можно и не идти..',
                     'consultation': 'И так сдам..',
                     'subject_report_with_grade': 'Автомат 5',
-                    'subject_report_without_grade': 'Автомат сто проц',
+                    'subject_report': 'Автомат сто проц',
                     'exam': 'Изи 5',
                     'library_day': 'Библиотечный день',
                     'project_work': 'Проектная деятельность'
