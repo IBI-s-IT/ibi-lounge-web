@@ -40,6 +40,7 @@ export const useLabels =
                     'this-month': 'Текущий месяц',
                     'next-month': 'Следующий месяц',
                     'custom': 'Свой период',
+                    'export': 'Экспорт',
 
 
                     'online': 'Онлайн',
@@ -162,6 +163,7 @@ export const useLabels =
                     'this-month': 'This month',
                     'next-month': 'Next month',
                     'custom': 'Custom period',
+                    'export': 'Export',
 
 
                     'online': 'Online',
@@ -286,6 +288,7 @@ export const useLabels =
                     'this-month': 'Текущий месяц',
                     'next-month': 'Следующий месяц',
                     'custom': 'Свой период',
+                    'export': 'Экспорт',
 
 
                     'online': 'Спать',

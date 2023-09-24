@@ -13,7 +13,6 @@ export const getEducationLevels = async () => {
 
 export const getGroups = async (education_level) => {
     const url = `/groups?level_id=${education_level}`
-    // console.log(url)
     const response = await instance.get(url)
     return response.data
 }
@@ -25,17 +24,29 @@ export const getSchedule = async (group_id, start_date, end_date, subject_props)
     `&dateStart=${start_date}` +
     `&dateEnd=${end_date}` +
     `&subgroups=${subject_props}`
-    // console.log(url)
     const response = await instance.get(url)
     return response.data
 }
 
 export const getGrades = async (last_name, pin) => {
     const url = `/grades?last_name=${last_name}&pin=${pin}`
-    // console.log(url)
     const response = await instance.get(url)
     return response.data
 }
+
+export const getCalendar = async (group_id, {
+    start_date,
+    end_date,
+    subgroups
+}) => {
+    const url = [`/calendar?group=${group_id}`]
+    url.push(start_date ? `&dateStart=${start_date}` : '')
+    url.push(end_date ? `&dateEnd=${end_date}` : '')
+    url.push(subgroups ? `&subgroups=${encodeURI(JSON.stringify(subgroups))}` : '')
+    const response = await instance.get(url.join(''))
+    return response.data
+}
+
 
 export const getDate = ({
         d= undefined,
@@ -55,13 +66,9 @@ export const getDate = ({
         'month-end'
     ]
 
-    // let date = new Date().toLocaleDateString()
-
     let day = new Date().getDate().toString()
     let month = (new Date().getMonth() + 1).toString()
     let year = new Date().getFullYear().toString()
-
-    // if (d !== undefined) day = new Date().getDate().toString()
 
     day = d !== undefined ? (d+dd).toString() : day - 0 + dd
     month = m !== undefined ? (m+md).toString() : month - 0 + md
@@ -95,7 +102,6 @@ export const getDate = ({
     day = day.toString().length === 1 ? `0${day}` : day
     month = month.toString().length === 1 ? `0${month}` : month
 
-    // console.log(response)
     return new Date(year - 0, month - 1, day - 0)
         .toLocaleDateString()
 }

@@ -8,11 +8,14 @@ import {usePeriodStore} from "@/stores/periodswitcher";
 import {useRoute, useRouter} from "vue-router";
 import {useLabels} from "@/stores/labels";
 import {computed} from "vue";
+import {getCalendar} from "@/api";
+import {useGroupStore} from "@/stores/group";
 
 const label = useLabels().label
 const periodStore = usePeriodStore()
 const route = useRoute()
 const router = useRouter()
+const groupStore = useGroupStore()
 
 const isMobile = computed(() => window.innerWidth < 768)
 
@@ -32,6 +35,27 @@ const openSidebar = () => {
 }
 const closeSidebar = () => {
   document.querySelector('#schedule-sidebar').classList.remove('opened')
+}
+
+const exportCalendar = async (e) => {
+  const a = e.target
+  if (a.download !== '') return
+
+  a.classList.add('loading')
+
+  const [start, end] = periodStore.dates
+  const [group, subgroups] = [groupStore.group, groupStore.subgroups]
+  const response = await getCalendar(
+      group,
+      {
+        start_date: start.toLocaleDateString(),
+        end_date: end.toLocaleDateString(),
+        subgroups: subgroups
+      })
+  a.href = window.URL.createObjectURL(new Blob([response]))
+  a.download = 'calendar.ics'
+  a.click()
+  a.classList.remove('loading')
 }
 
 
@@ -66,6 +90,7 @@ const closeSidebar = () => {
 
         />
       </span>
+      <a href="#export" id="export" @click="exportCalendar" v-if="route.meta.mode === 4">{{ label(['schedule', 'export']) }}</a>
     </div>
     <div class="schedule">
       <ScheduleContent />
