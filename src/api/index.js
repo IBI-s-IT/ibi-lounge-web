@@ -47,6 +47,12 @@ export const getCalendar = async (group_id, {
     return response.data
 }
 
+export const updateStaticData = async () => { // temp solution
+    const url = 'https://api.cullfy.ru/ibi/getStaticData'
+    const response = await axios.get(url)
+    return response.data
+}
+
 
 export const getDate = ({
         d= undefined,

@@ -1,16 +1,20 @@
 <script setup>
 
 import SelectInput from "@/components/ui/SelectInput.vue";
-import {ref} from "vue";
-import {getEducationLevels, getGroups} from "@/api";
+import {ref, watch} from "vue";
+import {getEducationLevels, getGroups, updateStaticData} from "@/api";
 import {useGroupStore} from "@/stores/group";
 import {useUIStore} from "@/stores/ui";
 import {useLabels} from "@/stores/labels";
 
 
 const groupStore = useGroupStore()
+watch(groupStore.subGroupsList, () => {
+  console.log(groupStore.subGroupsList)
+})
 const uiStore = useUIStore()
 const label = useLabels().label
+groupStore.subGroupsList.value = async ()=> {return await await updateStaticData()['subgroups'];}
 
 const levelSelectData = ref([{id: '1', name: 'Не выбрано'}])
 const groupSelectData = ref([{id: '1', name: 'Не выбрано'}])
