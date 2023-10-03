@@ -86,6 +86,7 @@ export const useLabels =
                 },
                 helpers: {
                     'loading': 'Загрузка...',
+                    'filters': 'Фильтры',
                 },
 
                 week: {
@@ -209,6 +210,7 @@ export const useLabels =
                 },
                 helpers: {
                     'loading': 'Loading...',
+                    'filters': 'Filters',
                 },
 
                 week: {
@@ -333,6 +335,7 @@ export const useLabels =
                 },
                 helpers: {
                     'loading': 'Загрузка пятерок...',
+                    'filters': 'Фильтры',
                 },
 
                 week: {

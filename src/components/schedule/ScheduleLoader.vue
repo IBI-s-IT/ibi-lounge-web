@@ -2,12 +2,14 @@
 
 import {getDate, getSchedule} from "@/api";
 import {useGroupStore} from "@/stores/group";
-import {ref, watch} from "vue";
+import {computed, ref, watch} from "vue";
 import {useRoute, useRouter} from "vue-router";
 import ScheduleContent from "@/components/schedule/ScheduleContent.vue";
 import {useUIStore} from "@/stores/ui";
 import {usePeriodStore} from "@/stores/periodswitcher";
 import {useLabels} from "@/stores/labels";
+import FloatingButton from "@/components/ui/FloatingButton.vue";
+import SelectInput from "@/components/ui/SelectInput.vue";
 
 
 const route = useRoute()
@@ -77,11 +79,49 @@ const uiStore = useUIStore()
 const schedule = ref('error')
 const error = ref('loading')
 
+const filteredSchedule = computed(() => {
+  if (typeof schedule.value === 'string') return []
+  const filtered = JSON.parse(JSON.stringify(schedule.value))
+  filtered.forEach((day) => {
+    day['lessons'] = day['lessons'].filter((lesson) => {
+      return typesFilter.value !== 'any' ? lesson['additional']['type'] === typesFilter.value : true
+    })
+  })
+  return filtered.filter((day) => {
+    return day['lessons'].length !== 0
+  })
+})
+
 
 loadContent()
 watch(route, () => {
   loadContent()
 })
+
+const filters = {
+  'type': [
+    'lecture',
+    'practice',
+    'consultation',
+    'subject_report_with_grade',
+    'subject_report',
+    'exam',
+    'library_day',
+    'project_work',
+    'any',
+  ],
+}
+
+const filterTypes = computed(() => {
+  return filters['type'].map((type) => {
+    return {
+      id: type,
+      name: label(['schedule', type])
+    }
+  })
+})
+
+const typesFilter = ref('any')
 
 </script>
 
@@ -99,7 +139,11 @@ watch(route, () => {
         {{ label(['errors', 'error']) + label(['errors', error]) }}
       </span>
     </div>
-    <ScheduleContent :schedule="schedule" :dates="dates" v-else />
+    <ScheduleContent :schedule="filteredSchedule" :dates="dates" v-else />
+
+    <FloatingButton>
+      <SelectInput v-model="typesFilter" :options="filterTypes" />
+    </FloatingButton>
   </div>
 </template>
 

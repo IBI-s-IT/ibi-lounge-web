@@ -1,6 +1,7 @@
 .container {
   height: var(--container-height);
   overflow-y: auto;
+  position: relative;
 }
 .error {
   display: flex;
