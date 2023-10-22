@@ -21,7 +21,7 @@ function getDates(type) {
     if (periodStore.dates === null) {
       router.push('/schedule/this-week')
     } else {
-      return [periodStore.dates[0].toLocaleDateString(), periodStore.dates[1].toLocaleDateString()]
+      return [periodStore.dates[0].toLocaleDateString('ru'), periodStore.dates[1].toLocaleDateString('ru')]
     }
   } else {
     periodStore.clearDates()
