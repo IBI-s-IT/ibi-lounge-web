@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "https://rasp-back-testing.utme.space";
+const baseURL = "https://rasp-back.utme.space";
 const instance = axios.create({
     baseURL: baseURL
 });
@@ -109,5 +109,5 @@ export const getDate = ({
     month = month.toString().length === 1 ? `0${month}` : month
 
     return new Date(year - 0, month - 1, day - 0)
-        .toLocaleDateString()
+        .toLocaleDateString('ru')
 }
